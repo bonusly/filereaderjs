@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["aaron@bonus.ly"]
 
   spec.summary       = "filereaderjs, packaged as a gem"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/bonusly/filereaderjs"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
