@@ -24,7 +24,7 @@ Add `//= require filereader` to `application.js`
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/filereaderjs.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bonusly/filereaderjs.
 
 
 ## License
