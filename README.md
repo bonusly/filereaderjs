@@ -24,33 +24,12 @@ Add `//= require filereader` to `application.js`
 
 ## Publishing
 
-To publish to our private gemserver you will first need to get the api key.
-
-The api key can be found in vault: https://vault.bonus.ly/ui/vault/secrets/kv/show/global/gemstash
-
-To set it correctly first check to see if you already have a file at `~/.gem/credentials` if you do
-you can skip to editing that file. If not follow these steps to create it:
-
-```shell
-$ mkdir -p ~/.gem
-$ touch ~/.gem/credentials
-$ chmod 0600 ~/.gem/credentials
-```
-
-Once you have a credentials file you will need to add the following line to it:
-
-```yaml
----
-:private_gemserver_key: <API KEY GOES HERE>
-```
-
-Now that you have the credentials configured use the following command to push a new version to the private gemserver:
-
-```shell
-$ gem push --key private_gemserver_key --host https://rubygems.bonusly.dev/private pkg/filereaderjs-X.X.X.gem
-```
-
-Now you can have the applications which use this gem run bundle update to get the new version.
+To publish to Github Packages (our private gem server):
+1. Change the version of the gem in `/lib/devise_two_factor/version.rb`.
+2. Run `bundle install` to update the version in the gemspec and Gemfile files.
+3. Tag the commit you want to publish (from the master branch) with the new version. You can run something like `git tag v1.0.4` and push to Github.
+4. Github actions will publish the new version of the gem for you. The publish step is kicked off by the push with a version tag.
+5. Now you can have the applications which use this gem run bundle update to get the new version.
 
 ## Contributing
 
